@@ -1,0 +1,84 @@
+<div class="row">
+    <div class="col-md">
+        <div class="card">
+            <div class="card-body bg-primary text-white">
+                <h5 class="text-center text-uppercase font-weight-bolder">pelamar perusahaan</h5>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md mt-3">
+        <div class="card">
+            <div class="card-body">
+                <button type="button" class="btn btn-primary btn-sm text-uppercase font-weight-bolder" data-toggle="modal" data-target="#exampleModal">
+                    upload pelamar perusahaan
+                </button>
+                <a class="btn btn-danger btn-sm" href="<?= base_url() ?>Dashboard/hapus_all_pelamar">HAPUS ALL PELAMAR</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?= $this->session->flashdata('pesan') ?>
+
+<div class="row mt-2">
+    <div class="col-md">
+        <div class="card">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-striped table-bordered text-center text-uppercase" id="dataTable" width="100%" cellspacing="0">
+                        <thead class="text-uppercase">
+                            <tr class="text-center">
+                                <th scope="col">#</th>
+                                <th scope="col">ID</th>
+                                <th scope="col">NAMA</th>
+                                <th scope="col">kelas</th>
+                                <!-- <th scope="col">thn ll</th> -->
+                                <th scope="col">asal sekolah</th>
+                                <th scope="col">nama perusahaan</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <?php
+                                $no = 1;
+                                foreach ($pelamar as $row) {
+                                ?>
+                                    <td><?php echo $no++; ?></td>
+                                    <td class="text-center"><?= $row['id_pelamar_perusahaan'] ?></td>
+                                    <td class="text-center"><?= $row['nama_pelamar'] ?></td>
+                                    <td class="text-center"><?= $row['kelas'] ?></td>
+                                    <!-- <td class="text-center"><?= $row['tahun_lulus'] ?></td> -->
+                                    <td class="text-center"><?= $row['asal_sekolah'] ?></td>
+                                    <td class="text-center"><?= $row['nama_perusahaan'] ?></td>
+                            </tr>
+                        <?php } ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title text-uppercase font-weight-bolder" id="exampleModalLabel">Upload perusahaan</h5>
+            </div>
+            <div class="modal-body">
+                <?= form_open_multipart('Dashboard/upload_pelamar_perusahaan'); ?>
+                <div class="form-group">
+                    <input type="file" name="excel" class="form-control-file" name="file" required accept=".xlsx">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" name="submit" value="upload" class="btn btn-primary">Upload</button>
+                </div>
+                <?= form_close(); ?>
+            </div>
+        </div>
+    </div>
+</div>
