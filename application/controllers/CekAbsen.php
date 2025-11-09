@@ -21,7 +21,7 @@ class CekAbsen extends CI_Controller
     public function simpanabsen()
     {
 
-        $id_absen = rand(10000, 99999);
+        $id_absen = rand(100000, 999999);
         $id_pelamarid_pelamar = $this->input->post('id_pelamar_perusahaan');
         $status = 'HADIR';
 
