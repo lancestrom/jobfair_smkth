@@ -46,7 +46,7 @@
                 </div>
             </div>
         </div>
-        <form action="<?= base_url() ?>CekAbsen/simpanAbsen" method="post">
+        <form action="<?= base_url() ?>Cekabsen/simpanAbsen" method="post">
             <div class="form-group">
                 <input type="text" class="form-control" value="<?= $pelamar['id_pelamar_perusahaan']; ?>" name="id_pelamar_perusahaan" hidden>
             </div>

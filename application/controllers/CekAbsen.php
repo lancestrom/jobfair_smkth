@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class CekAbsen extends CI_Controller
+class Cekabsen extends CI_Controller
 {
 
 
