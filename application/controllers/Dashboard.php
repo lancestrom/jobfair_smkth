@@ -14,6 +14,7 @@ class Dashboard extends CI_Controller
         $this->Model_keamanan->getKeamanan();
         $isi['perusahaan'] = $this->Model_perusahaan->countPerusahaan();
         $isi['pelamar'] = $this->Model_perusahaan->countPelamar();
+        $isi['absen'] = $this->Model_perusahaan->countAbsen();
         $isi['content'] = 'tampilan_home';
         $this->load->view('templates/header');
         $this->load->view('tampilan_dashboard', $isi);

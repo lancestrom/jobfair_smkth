@@ -28,7 +28,7 @@
     </div>
     <div class="col-md">
         <div class="alert alert-info" role="alert">
-            <h5>0</h5>
+            <h5><?= $absen['jumlah_absen'] ?></h5>
             <h5 class="text-uppercase font-weight-bolder">absen pelamar</h5>
         </div>
     </div>

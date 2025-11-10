@@ -17,6 +17,13 @@ class Model_perusahaan extends CI_Model
         return $query->row_array();
     }
 
+    public function countAbsen()
+    {
+        $sql = "SELECT count(*) AS jumlah_absen FROM `absen`;";
+        $query = $this->db->query($sql);
+        return $query->row_array();
+    }
+
     public function dataPerusahaan()
     {
         $sql = "SELECT * FROM `perusahaan`";
